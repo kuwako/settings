@@ -1,0 +1,14 @@
+"*":
+  core:
+    disabledPackages: [
+      "ever-notedown"
+      "color-picker"
+      "japanese-wrap"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    softWrap: true
+  "exception-reporting":
+    userId: "723cb0ae-9e31-8fa9-1c23-d090059d90d7"
+  welcome:
+    showOnStartup: false
