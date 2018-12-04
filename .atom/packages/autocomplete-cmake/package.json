@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+        "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118424-69319-y3bs3j.ubnchrrudi"
+    ]
+  ],
+  "_from": "../d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+  "_id": "autocomplete-cmake@0.3.1",
+  "_inCache": true,
+  "_location": "/autocomplete-cmake",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+    "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+  "_shasum": "2e4ac86b870796f919ad14821ba1efc209968943",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118424-69319-1n4d1me.hdxq5dygb9/package.tgz",
+  "_where": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118424-69319-y3bs3j.ubnchrrudi",
+  "bugs": {
+    "url": "https://github.com/NealRame/autocomplete-cmake/issues"
+  },
+  "dependencies": {
+    "fuzzaldrin": "^2.1.0"
+  },
+  "description": "An Autocomplete Plus provider for CMake.",
+  "devDependencies": {
+    "eslint": "^1.8.0"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "rules": {
+      "camelcase": 0,
+      "curly": [
+        1,
+        "multi-line"
+      ],
+      "new-cap": [
+        1,
+        {
+          "newIsCap": true,
+          "capIsNew": false
+        }
+      ],
+      "quotes": [
+        1,
+        "single"
+      ],
+      "space-infix-ops": 0,
+      "strict": [
+        2,
+        "global"
+      ]
+    }
+  },
+  "homepage": "https://github.com/NealRame/autocomplete-cmake#readme",
+  "license": "MIT",
+  "main": "./lib/autocomplete-cmake",
+  "name": "autocomplete-cmake",
+  "optionalDependencies": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  },
+  "readme": "# autocomplete-cmake package\n\nAn Autocomplete Plus provider for CMake.\n\n![Screencast](https://dl.dropboxusercontent.com/u/23161414/autocomplete-cmake-screencast.gif)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NealRame/autocomplete-cmake.git"
+  },
+  "version": "0.3.1"
+}

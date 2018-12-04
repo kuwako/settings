@@ -1,0 +1,63 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+        "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118625-7642-1iuh48m.r94ojn61or"
+    ]
+  ],
+  "_from": "../d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+  "_id": "auto-encoding@0.7.1",
+  "_inCache": true,
+  "_location": "/auto-encoding",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+    "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+  "_shasum": "d525b674265fc4e8252deb306d2b380eb0ed97bf",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118625-7642-z4xxcj.omlid4pldi/package.tgz",
+  "_where": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118625-7642-1iuh48m.r94ojn61or",
+  "bugs": {
+    "url": "https://github.com/t-ishii/auto-encoding/issues"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.23",
+    "jschardet": "^1.6.0",
+    "lodash": "^4.17.4"
+  },
+  "description": "Auto detect",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/t-ishii/auto-encoding#readme",
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "auto-encoding",
+  "optionalDependencies": {},
+  "readme": "# auto-encoding\n\ndefault \"Auto Detect\".\n\n## Installation\n\n`$ apm install auto-encoding`\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-ishii/auto-encoding.git"
+  },
+  "version": "0.7.1"
+}

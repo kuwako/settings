@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+        "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118429-5594-1q5sf31.1kr8k9be29"
+    ]
+  ],
+  "_from": "../d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+  "_id": "vim-mode-plus-auto-ime@2.2.6",
+  "_inCache": true,
+  "_location": "/vim-mode-plus-auto-ime",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+    "spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+  "_shasum": "6c48d0497b9e2979ba6a95cd418e16311556a909",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/d-118429-5594-1xs9x65.c7bxdsfw29/package.tgz",
+  "_where": "/private/var/folders/rf/jc_q92f15kvb3r6nvn712jth0000gn/T/apm-install-dir-118429-5594-1q5sf31.1kr8k9be29",
+  "bugs": {
+    "url": "https://github.com/xream/atom-vim-mode-plus-auto-ime/issues"
+  },
+  "consumedServices": {
+    "vim-mode-plus": {
+      "versions": {
+        "^0.1.0": "consumeVim"
+      }
+    }
+  },
+  "dependencies": {},
+  "description": "automatically change ime when vim mode changes",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/xream/atom-vim-mode-plus-auto-ime#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./lib/vim-mode-plus-auto-ime",
+  "name": "vim-mode-plus-auto-ime",
+  "optionalDependencies": {},
+  "readme": "# atom-vim-mode-plus-auto-ime\n\nautomatically change ime with the custom command when vim mode changes\n\n## macOS\n\nFor example, macOS users can use vovkasm/input-source-switcher:\n\nhttps://github.com/vovkasm/input-source-switcher\n\n![](https://i.imgur.com/KdPGbgw.png)\n\n## Windows\n\nAnd finally for Windows users:\n\nBig thanks to [heyeshuang](https://github.com/heyeshuang)!\n\n[heyeshuang/ime_helper](https://github.com/heyeshuang/ime_helper): Command line input source switcher for Windows\n\n[Auto-Switch IME in Vim-Mode-Plus for Atom Editor](https://heyeshuang.github.io/blog/2017/09/05/atom-vim-mode-auto-switch-ime/)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xream/atom-vim-mode-plus-auto-ime.git"
+  },
+  "version": "2.2.6"
+}

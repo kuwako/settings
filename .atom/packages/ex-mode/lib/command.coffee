@@ -14,7 +14,11 @@ class Command
       addr = row
     else if str is '$'
       # Lines are 0-indexed in Atom, but 1-indexed in vim.
-      addr = @editor.getBuffer().lines.length - 1
+      # The two ways of getting length let us support Atom 1.19's new buffer
+      # implementation (https://github.com/atom/atom/pull/14435) and still
+      # support 1.18 and below
+      buffer = @editor.getBuffer()
+      addr = (buffer.getLineCount?() ? buffer.lines.length) - 1
     else if str[0] in ["+", "-"]
       addr = row + @parseOffset(str)
     else if not isNaN(str)
@@ -22,7 +26,7 @@ class Command
     else if str[0] is "'" # Parse Mark...
       unless @vimState?
         throw new CommandError("Couldn't get access to vim-mode.")
-      mark = @vimState.marks[str[1]]
+      mark = @vimState.mark.marks[str[1]]
       unless mark?
         throw new CommandError("Mark #{str} not set.")
       addr = mark.getEndBufferPosition().row
@@ -73,7 +77,9 @@ class Command
       return
 
     # Step 4: Address parsing
-    lastLine = @editor.getBuffer().lines.length - 1
+    # see comment in parseAddr about line length
+    buffer = @editor.getBuffer()
+    lastLine = (buffer.getLineCount?() ? buffer.lines.length) - 1
     if cl[0] is '%'
       range = [0, lastLine]
       cl = cl[1..]
@@ -123,8 +129,9 @@ class Command
           address1 += @parseOffset(off1)
 
         address1 = 0 if address1 is -1
+        address1 = lastLine if address1 > lastLine
 
-        if address1 < 0 or address1 > lastLine
+        if address1 < 0
           throw new CommandError('Invalid range')
 
         if addr2?
@@ -132,7 +139,10 @@ class Command
         if off2?
           address2 += @parseOffset(off2)
 
-        if address2 < 0 or address2 > lastLine
+        address2 = 0 if address2 is -1
+        address2 = lastLine if address2 > lastLine
+
+        if address2 < 0
           throw new CommandError('Invalid range')
 
         if address2 < address1

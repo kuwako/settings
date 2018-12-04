@@ -11,7 +11,7 @@ describe "the commands", ->
   [editor, editorElement, vimState, exState, dir, dir2] = []
   projectPath = (fileName) -> path.join(dir, fileName)
   beforeEach ->
-    vimMode = atom.packages.loadPackage('vim-mode')
+    vimMode = atom.packages.loadPackage('vim-mode-plus')
     exMode = atom.packages.loadPackage('ex-mode')
     waitsForPromise ->
       activationPromise = exMode.activate()
@@ -42,7 +42,6 @@ describe "the commands", ->
         editor = editorElement.getModel()
         vimState = vimMode.mainModule.getEditorState(editor)
         exState = exMode.mainModule.exStates.get(editor)
-        vimState.activateNormalMode()
         vimState.resetNormalMode()
         editor.setText("abc\ndef\nabc\ndef")
 
@@ -88,6 +87,33 @@ describe "the commands", ->
 
       openEx()
       submitNormalModeInputText '-2'
+      expect(editor.getCursorBufferPosition()).toEqual [0, 0]
+
+    it "limits to the last line", ->
+      openEx()
+      submitNormalModeInputText '10'
+      expect(editor.getCursorBufferPosition()).toEqual [3, 0]
+      editor.setCursorBufferPosition([0, 0])
+
+      openEx()
+      submitNormalModeInputText '3,10'
+      expect(editor.getCursorBufferPosition()).toEqual [3, 0]
+      editor.setCursorBufferPosition([0, 0])
+
+      openEx()
+      submitNormalModeInputText '$+1000'
+      expect(editor.getCursorBufferPosition()).toEqual [3, 0]
+      editor.setCursorBufferPosition([0, 0])
+
+    it "goes to the first line with address 0", ->
+      editor.setCursorBufferPosition([2, 0])
+      openEx()
+      submitNormalModeInputText '0'
+      expect(editor.getCursorBufferPosition()).toEqual [0, 0]
+
+      editor.setCursorBufferPosition([2, 0])
+      openEx()
+      submitNormalModeInputText '0,0'
       expect(editor.getCursorBufferPosition()).toEqual [0, 0]
 
     it "doesn't move when the address is the current line", ->
@@ -458,6 +484,13 @@ describe "the commands", ->
       submitNormalModeInputText('xit')
       expect(Ex.wq).toHaveBeenCalled()
 
+  describe ":x", ->
+    it "acts as an alias to :xit", ->
+      spyOn(Ex, 'xit')
+      openEx()
+      submitNormalModeInputText('x')
+      expect(Ex.xit).toHaveBeenCalled()
+
   describe ":wqall", ->
     it "calls :wall, then :quitall", ->
       spyOn(Ex, 'wall')
@@ -681,6 +714,17 @@ describe "the commands", ->
       atom.commands.dispatch(editorElement, 'ex-mode:open')
       submitNormalModeInputText(':%substitute/abc/ghi/ig')
       expect(editor.getText()).toEqual('ghiaghi\ndefdDEF\nghiaghi')
+
+    it "set gdefault option", ->
+      openEx()
+      atom.config.set('ex-mode.gdefault', true)
+      submitNormalModeInputText(':substitute/a/x')
+      expect(editor.getText()).toEqual('xbcxABC\ndefdDEF\nabcaABC')
+
+      atom.commands.dispatch(editorElement, 'ex-mode:open')
+      atom.config.set('ex-mode.gdefault', true)
+      submitNormalModeInputText(':substitute/a/x/g')
+      expect(editor.getText()).toEqual('xbcaABC\ndefdDEF\nabcaABC')
 
     describe ":yank", ->
       beforeEach ->
@@ -911,6 +955,14 @@ describe "the commands", ->
         submitNormalModeInputText(':set nosmartcase')
         expect(atom.config.get('vim-mode.useSmartcaseForSearch')).toBe(false)
 
+      it "sets (no)gdefault", ->
+        openEx()
+        submitNormalModeInputText(':set gdefault')
+        expect(atom.config.get('ex-mode.gdefault')).toBe(true)
+        atom.commands.dispatch(editorElement, 'ex-mode:open')
+        submitNormalModeInputText(':set nogdefault')
+        expect(atom.config.get('ex-mode.gdefault')).toBe(false)
+
   describe "aliases", ->
     it "calls the aliased function without arguments", ->
       ExClass.registerAlias('W', 'w')
@@ -950,3 +1002,18 @@ describe "the commands", ->
       expect(calls.length).toEqual 2
       expect(calls[0].args[0].range).toEqual [0, 2]
       expect(calls[1].args[0].range).toEqual [3, 3]
+
+  describe ':sort', ->
+    beforeEach ->
+      editor.setText('ghi\nabc\njkl\ndef\n142\nzzz\n91xfds9\n')
+      editor.setCursorBufferPosition([0, 0])
+
+    it "sorts entire file if range is not multi-line", ->
+      openEx()
+      submitNormalModeInputText('sort')
+      expect(editor.getText()).toEqual('142\n91xfds9\nabc\ndef\nghi\njkl\nzzz\n')
+
+    it "sorts specific range if range is multi-line", ->
+      openEx()
+      submitNormalModeInputText('2,4sort')
+      expect(editor.getText()).toEqual('ghi\nabc\ndef\njkl\n142\nzzz\n91xfds9\n')

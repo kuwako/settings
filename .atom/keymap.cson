@@ -36,3 +36,19 @@
   'ctrl-a l': 'window:focus-pane-on-right'
   'ctrl-a j': 'window:focus-pane-on-below'
   'ctrl-a k': 'window:focus-pane-on-above'
+  'ctrl-]': 'pane:show-next-item'
+  'ctrl-[': 'pane:show-previous-item'
+'.platform-darwin':
+  'cmd-shift-t': 'tree-view:toggle'
+'.tree-view':
+  'ctrl-[': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor.vim-mode.visual-mode':
+  'ctrl-[': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'ctrl-]': 'unset!'
+  'ctrl-]': 'unset!'
+'atom-text-editor':
+  'ctrl-]': 'unset!'
+  'ctrl-]': 'unset!'

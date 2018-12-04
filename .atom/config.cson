@@ -1,14 +1,55 @@
 "*":
+  "atom-ctags":
+    disableComplete: true
+  "autocomplete-clang":
+    includeNonDoxygenCommentsAsDocumentation: true
+    "std c++": "c++14"
   core:
     disabledPackages: [
       "ever-notedown"
       "color-picker"
       "japanese-wrap"
+      "linter-ui-default"
+      "atom-runner"
+      "symbols-view"
+      "vim-mode"
+      "vim-mode-plus-ex-mode"
+      "ide-cpp"
+      "linter-cpplint"
+      "linter-ruby"
+      "ide-clangd"
     ]
     telemetryConsent: "limited"
   editor:
     softWrap: true
   "exception-reporting":
     userId: "723cb0ae-9e31-8fa9-1c23-d090059d90d7"
+  "linter-clang":
+    clangDefaultCppFlags: "-Wall -std=c++14"
+  "linter-cppcheck":
+    enableMissingInclude: true
+    enableUnusedFunction: true
+    force: true
+    inlineSuppressions: true
+  "linter-gcc":
+    execPath: "/usr/local/Cellar/gcc/8.1.0/bin/gcc-8"
+    gccDebug: true
+    gccDefaultCFlags: "-c -Wall -fsyntax-only"
+    gccDefaultCppFlags: "-c -Wall -std=c++14"
+    gccLintOnTheFly: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+  "vim-mode-plus":
+    ignoreCaseForFind: true
+    ignoreCaseForSearch: true
+    ignoreCaseForSearchCurrentWord: true
+    reuseFindForRepeatFind: true
+    showHoverSearchCounter: true
+    useSmartcaseForFind: true
+    useSmartcaseForSearch: true
+    useSmartcaseForSearchCurrentWord: true
   welcome:
     showOnStartup: false
+".gemfile.ruby.source":
+  editor:
+    tabLength: 4

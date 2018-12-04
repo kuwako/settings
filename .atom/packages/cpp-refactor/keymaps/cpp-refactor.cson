@@ -1,0 +1,14 @@
+# Keybindings require three things to be fully defined: A selector that is
+# matched against the focused element, the keystroke and the command to
+# execute.
+#
+# Below is a basic keybinding which registers on all platforms by applying to
+# the root workspace element.
+
+# For more detailed documentation see
+# https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+#
+# Anicka: Sorry for these two keymaps. I tried to use .platform-linux and windows and darwin. It even created the keymaps and they were visible in keymaps in atom, but they actually didnt work. Atom documentation is horrible and I couldn't find any help for this problem.
+'atom-text-editor':
+    'cmd-alt-r c'     : 'cpp-refactor:find-class'
+    'ctrl-alt-r c'     : 'cpp-refactor:find-class'
